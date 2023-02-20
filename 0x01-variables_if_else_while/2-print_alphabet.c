@@ -1,32 +1,19 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
-  * main - Prints the numbers from 00 to 99
-  *
-  * Return: Always (Success)
-  */
+ * main - Entry point
+ * Description: prints the alphabet in lowercase\n
+ * Return: Always 0 (success)
+ */
 int main(void)
 {
- int c, i;
+ int ch;
 
- c = i = '0';
-
- for (c = '0'; c <= '9'; c++)
+ for (ch = 'a'; ch <= 'z'; ch++)
  {
-  for (i = '0'; i <= '9'; i++)
-  {
-   putchar(c);
-   putchar(i);
-
-   if ((c != '9') || (c == '9' && i != '9'))
-   {
-    putchar(',');
-    putchar(' ');
-   }
-  }
+  putchar(ch);
  }
-
  putchar('\n');
-
- return (0);
+return (0);
 }
