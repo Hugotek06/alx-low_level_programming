@@ -1,20 +1,31 @@
-include <stdio.h>
-
+#include <stdio.h>
 /**
-  * main - Prints the numbers since 0 to 9
-  *
-  * Return: Always (Success)
-  */
+ * main - Entry point
+ *
+ * Description: 'the program prints from a - z using putchar function '
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
- char n;
 
- for (n = '0'; n <= '9'; n++)
+ int ascii;
+
+ ascii = 48;
+
+ while (ascii < 58)
+
  {
-  putchar(n);
+  putchar(ascii);
+  if (ascii != 57)
+  {
+   putchar(44);
+   putchar(32);
+  } else
+  {
+   putchar('\n');
+  }
+  ascii++;
  }
-
- putchar('\n');
-
  return (0);
 }
