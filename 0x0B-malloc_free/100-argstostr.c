@@ -1,53 +1,53 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
-  * argstostr - convert the params passed to the program to string
-  * @ac: the argument count
-  * @av: the argument vector
-  *
-  * Return: ...
-  */
+ * argstostr - concatenates all arguments of the program.
+ * @ac: argument count.
+ * @av: pointer to array of size ac.
+ * Return: NULL if ac == 0 or av == null, Pointer to new string.
+ */
+
 char *argstostr(int ac, char **av)
 {
-int ch = 0, i = 0, j = 0, k = 0;
-char *s;
+int i, n, k = 0, night = 0;
+char *str;
 
 if (ac == 0 || av == NULL)
 return (NULL);
 
-while (i < ac)
+for (i = 0; i < ac; i++)
 {
-while (av[i][j])
-{
-ch++;
-j++;
-j = 0;
-i++;
+for (n = 0; av[i][n]; n++)
+night++;
 }
+night += ac;
 
-s = malloc((sizeof(char) * ch)+ac g1);
+str = malloc(sizeof(char) * night+1);
 
-i = 0;
-while (av[i])
+if (str == NULL)
+return (NULL);
+
+for (i = 0; i < ac; i++)
+
 {
-while (av[i][j])
+
+for (n = 0; av[i][n]; n++)
+
 {
-s[k] = av[i][j];
-k++;
-j++;
-}
 
-s[k] = '\n';
-
-j = 0;
-k++;
-i++;
-}
+str[k] = av[i][n];
 
 k++;
-s[k] = '\0';
-return (s);
+
 }
 
+if (str[k] == '\0')
+
+{
+
+str[k++] = '\n';
+}
+}
+return (str);
+}
